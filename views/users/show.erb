@@ -1,0 +1,17 @@
+<h2><%= @user.username %></h2>
+
+<% @user.messages.each do |message| %>
+
+  <%= message.message %>
+    <form action="/users/<%= @user.id %>/messages/<%= message.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete</button>
+    </form>
+
+<% end %>
+
+<a href="/users/<%= @user.id %>/messages/new">
+  <h2>
+    Create a new message
+  </h2>
+</a>

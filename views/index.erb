@@ -1,0 +1,19 @@
+<h2>Create a user and make a message</h2>
+<form action="/users/new" method="get">
+  <button type="submit">Create user</button>
+</form>
+
+
+<ul>
+  <% @users.each do |user| %>
+
+  <li>
+    <a href="/users/<%= user.id %>">
+      <%= user.username %>
+    </a>
+  </li>
+  <% end %>
+
+</ul>
+
+<footer>&copy; Corey Leveen 2014</footer>
