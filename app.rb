@@ -20,13 +20,27 @@ end
 post '/users' do
   username = params[:username]
   new_user = User.create({username: username})
-  redirect "/users/#{ new_user.id }"
+  redirect "/users/#{new_user.id}"
 end
 
 # Show a user
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :'users/show'
+end
+
+# Show user edit page
+get '/users/:id/edit' do
+  @user = User.find(params[:id])
+  erb :'users/edit'
+end
+
+# Update user
+put '/users/:id' do
+  @user = User.find(params[:id])
+  @user.username = params[:username]
+  @user.save
+  redirect "/users/#{@user.id}"
 end
 
 # Message creation page

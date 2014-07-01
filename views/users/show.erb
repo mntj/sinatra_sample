@@ -5,7 +5,7 @@
   <%= message.message %>
     <form action="/users/<%= @user.id %>/messages/<%= message.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button type="submit">Delete</button>
+    <button type="submit">Delete message</button>
     </form>
 
 <% end %>
@@ -15,3 +15,6 @@
     Create a new message
   </h2>
 </a>
+
+
+

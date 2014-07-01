@@ -2,3 +2,10 @@ body {
   background-color: oldlace;
 }
 
+footer {
+  margin-top: 100%;
+}
+
+a, button {
+  margin: 5px;
+}
